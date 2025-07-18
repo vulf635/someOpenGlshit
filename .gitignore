@@ -1,0 +1,13 @@
+
+/build*/
+/out/
+/bin/
+/lib/
+/x64/
+/x86/
+/ARM/
+/ARM64/
+/CMakeFiles/
+/.vs/
+/.cache/
+/Testing/
