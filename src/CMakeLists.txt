@@ -6,12 +6,15 @@
 
 
 
-add_executable (newc "newc.cpp" "newc.h")
+add_executable (newc "main.cpp" "main.h"
+        engine/Objects/Texture2d.cpp
+        engine/Objects/Texture2d.h
+        engine/Objects/Sprite.cpp
+        engine/Objects/Sprite.h)
 
-target_compile_definitions(glew_s PUBLIC GLEW_STATIC)
 
 
-target_link_libraries(newc PRIVATE glfw glad glew_s)
+target_link_libraries(newc PRIVATE glfw glad)
 
 # On Windows: link OpenGL32
 if (WIN32)
