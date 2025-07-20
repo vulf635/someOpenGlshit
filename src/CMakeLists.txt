@@ -10,11 +10,15 @@ add_executable (newc "main.cpp" "main.h"
         engine/Objects/Texture2d.cpp
         engine/Objects/Texture2d.h
         engine/Objects/Sprite.cpp
-        engine/Objects/Sprite.h)
+        engine/Objects/Sprite.h
+        engine/Objects/Shader.cpp
+        engine/Objects/Shader.h
+        engine/Objects/ResourceManager.cpp
+        engine/Objects/ResourceManager.h)
 
 
-
-target_link_libraries(newc PRIVATE glfw glad)
+target_include_directories(newc PRIVATE ${stb_SOURCE_DIR})
+target_link_libraries(newc PRIVATE glfw glad glm stb)
 
 # On Windows: link OpenGL32
 if (WIN32)
