@@ -4,6 +4,8 @@
 #include <String>
 #include <map>
 #include "Shader.h"
+#include "glad/glad.h"
+
 
 class ResourceManager {
 public:
@@ -12,11 +14,16 @@ public:
 
 
     static Shader LoadShader(const char* vShaderFile, const char* fShaderFile, std::string name);
-    static Texture2d LoadTexture(const std::string& file, const std::string& name);
+    static Texture2d LoadTexture(const char* file, std::string name, bool alpha);
 
     static Shader& GetShader(const std::string& name);
     static Texture2d& GetTexture(const std::string& name);
     static void Clear();
+
+
+private:
+    static Shader LoadShaderFromFile(const char* vShaderFile, const char* fShaderFile);
+    static Texture2d LoadTextureFromFile(const char* file, bool alpha);
 
 };
 
