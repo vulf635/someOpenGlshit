@@ -14,7 +14,7 @@ add_executable (newc "main.cpp" "main.h"
         engine/Objects/Shader.cpp
         engine/Objects/Shader.h
         engine/Objects/ResourceManager.cpp
-        engine/Objects/ResourceManager.h )
+        engine/Objects/ResourceManager.h  "mainv2.cpp")
 
 
 target_include_directories(newc PRIVATE ${stb_SOURCE_DIR})

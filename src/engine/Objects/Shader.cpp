@@ -29,6 +29,14 @@ void Shader::Compile(const char *vertexSource, const char *fragmentSource) {
     glDeleteShader(fShader);
 }
 
+void Shader::SetInteger(const char* name, int value, bool useShader) {
+    if (useShader) {
+        this->Use();
+    }
+    glUniform1i(glGetUniformLocation(this->ID, name), value);
+}
+
+
 void Shader::checkCompileErrors(unsigned int object, std::string type) {
     //TODO
 }

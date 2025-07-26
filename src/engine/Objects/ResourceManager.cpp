@@ -80,4 +80,12 @@ Texture2d ResourceManager::LoadTextureFromFile(const char* file, bool alpha) {
 	}
 }
 
+Shader &ResourceManager::GetShader(const std::string& name) {
+    return Shaders[name];
+}
+
+Texture2d& ResourceManager::GetTexture(const std::string& name) {
+    return Textures[name];
+}
+
 
